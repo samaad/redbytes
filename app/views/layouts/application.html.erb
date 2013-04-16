@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedbyteAssingment</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id= "content_div">
+	<% if user_signed_in? %>
+	Signed in as <%= current_user.email%>. Not you?
+	<%= link_to "Sign Out", destroy_user_session_path, :method => :get %>	
+	<% else %>	
+	<% end %>
+<%= yield %>
+</div>
+</body>
+</html>
